@@ -13,3 +13,4 @@
 #include "fingerprint.dtsi"
 #include "power.dtsi"
 #include "touchscreen.dtsi"
+#include "camera.dtsi"
