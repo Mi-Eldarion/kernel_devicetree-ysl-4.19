@@ -1,2 +1,4 @@
 #include "spi.dtsi"
 #include "android.dtsi"
+#include "battery.dtsi"
+#include "power.dtsi"
