@@ -27,3 +27,42 @@
 		};
 	};
 };
+
+&spmi_bus {
+	qcom,pmi8940@3 {
+		labibb: qpnp-labibb-regulator {
+			status = "ok";
+			ibb_regulator: qcom,ibb@dc00 {
+				/delete-property/
+					qcom,qpnp-ibb-use-default-voltage;
+				qcom,qpnp-ibb-init-lcd-voltage = <5700000>;
+			};
+
+			lab_regulator: qcom,lab@de00 {
+				/delete-property/
+					qcom,qpnp-ibb-use-default-voltage;
+				qcom,qpnp-ibb-init-lcd-voltage = <5700000>;
+			};
+		};
+	};
+};
+
+&pm8953_vadc {
+chan@11 {
+		label = "case_therm";
+		reg = <0x11>;
+		qcom,decimation = <0>;
+		qcom,pre-div-channel-scaling = <0>;
+		qcom,calibration-type = "ratiometric";
+		qcom,scale-function = <2>;
+		qcom,hw-settle-time = <2>;
+		qcom,fast-avg-setup = <0>;
+		qcom,vadc-thermal-node;
+	};
+};	
+
+&usb3 {
+	qcom,usbin-vadc = <&pmi8940_vadc>;
+	qcom,detect-dpdm-floating;
+	extcon = <&qpnp_smbcharger>;
+};
