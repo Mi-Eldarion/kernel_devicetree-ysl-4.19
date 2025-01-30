@@ -5,6 +5,7 @@
 #include "ysl-pinctrl.dtsi"
 #include "android.dtsi"
 #include "haptic.dtsi"
+#include "audio.dtsi"
 #include "battery.dtsi"
 #include "misc.dtsi"
 #include "pstore.dtsi"
