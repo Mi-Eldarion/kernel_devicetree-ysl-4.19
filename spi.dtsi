@@ -1,0 +1,7 @@
+/ {
+	aliases {
+		spi3 = &spi_3;
+		spi5 = &spi_5;
+	};
+};
+
